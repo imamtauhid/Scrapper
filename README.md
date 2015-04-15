@@ -1,0 +1,2 @@
+# Scrapper
+Osmosis npm Wrapper
