@@ -1,0 +1,27 @@
+{
+
+    "name": "alpha data",
+
+    "uri": "www.drugs.com",
+
+    "command": {
+
+        "firstNews": {
+
+            "_find": "div.homeMain > div.contentBox:first > div.newsItem",
+
+            "_set": {
+
+                "date": "p.newsDate",
+                "title": "h2",
+                "description": "p:not(.newsDate)"
+
+            },
+
+            "_data": ""
+
+        }
+
+    }
+
+}
