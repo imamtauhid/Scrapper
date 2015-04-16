@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test/scrap-test.js"
+    "test": "node test/scrap-test.js",
+    "start": "node main/drugsdotcom.js"
   },
   "author": "Imam Tauhid",
   "license": "BSD-2-Clause",

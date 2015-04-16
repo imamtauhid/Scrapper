@@ -7,7 +7,7 @@ var cosmo = require('osmosis')
 
     var url1 = "www.drugs.com"
 
-    var scr = require(__dirname + '/../src/Scrapper.js')
+    var scr = require(__dirname + '/../src/Scrapper/Scrapper.js')
 
     console.log("scrap-test.js :: test 2 :: start")
 
@@ -22,6 +22,7 @@ var cosmo = require('osmosis')
             description: 'p:not(.newsDate)'
 
         })
+
         .data(function(listing){
 
             console.log('start ============================================')
@@ -30,7 +31,7 @@ var cosmo = require('osmosis')
 
         })
 
-console.log("scrap-test.js :: test 1 :: end")
+console.log("scrap-test.js :: test 2 :: end")
 
 return
 

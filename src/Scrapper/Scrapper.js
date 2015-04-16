@@ -106,11 +106,15 @@ var Cosmo = function(config){
      * @param  {[type]} query [description]
      * @return {[type]}       [description]
      */
-    _this.find = function(query){
+    _this.find = function(query, callback){
 
         console.log("Scrapper.js :: find")
 
-        _transformed = _transformed.find(query)
+        _transformed = _transformed.find(query, function(context, data, next){
+
+            if(typeof callback == 'function') callback(context, data, next, this)
+
+        })
 
         return _this
 
