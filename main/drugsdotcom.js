@@ -2,10 +2,9 @@ console.log("drugsdotcom.js :: required")
 
 var url = "http://www.drugs.com/drug_information.html"
 var scr = require(__dirname + '/../src/Scrapper/Scrapper.js')
-var osmo = require('osmosis')
 var cosmo = scr.createCosmo(url)
 
-osmo.get('http://www.drugs.com/drug_information.html')
+cosmo
 .find('div.boxList.boxListAZDrugs > p.paging-list-index.clearAfter > a')
 .follow('@href')
 .find('div.contentBox ul.doc-type-list > li > a')
