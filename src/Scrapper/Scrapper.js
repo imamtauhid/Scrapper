@@ -27,11 +27,11 @@ var Cosmo = function(config){
 
         if(typeof config == 'string'){
 
-            _config.uri = config
+            _this.setUrl(config)
 
         }else if(typeof config == 'object'){
 
-            if(config.uri) _config.uri = config.uri
+            if(config.uri) _this.setUrl(config)
 
         }
 
@@ -110,11 +110,22 @@ var Cosmo = function(config){
 
         console.log("Scrapper.js :: find")
 
-        _transformed = _transformed.find(query, function(context, data, next){
+        if(callback) console.log("Scrapper.js :: find :: exist callback ", typeof callback)
 
-            if(typeof callback == 'function') callback(context, data, next, this)
+        if(typeof callback == 'string'){
 
-        })
+            _transformed = _transformed.find(query, callback)
+
+        } else
+        if(typeof callback == 'function'){
+
+            _transformed = _transformed.find(query, callback)
+
+        }else{
+
+            _transformed = _transformed.find(query)
+
+        }
 
         return _this
 
@@ -134,6 +145,8 @@ var Cosmo = function(config){
             callback(context, data, next, this)
 
         })
+
+        return this
 
     }
 
@@ -168,7 +181,7 @@ var Cosmo = function(config){
 
         if(typeof data == 'string'){
 
-            _transformed = _transformed.set(arguments[0], arguments[1])
+            _transformed = _transformed.set(data)
 
         }
 
